@@ -11,9 +11,8 @@ body{
 .about-wrapper{
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-x: hidden;
 }
-
 .about-left{
     background: #f26a8d;
     display: flex;
@@ -21,7 +20,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto;
 }
 .about-left-content > div{
     background: #f49cbb;
@@ -118,7 +117,7 @@ body{
     align-items: center;
     padding: 0 5rem;
     text-align: center;
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto; 
 }
 .about-right h1{
     font-size: 7rem;
@@ -171,18 +170,18 @@ body{
     padding: 0.5rem;
     opacity: 0.8;
 }
-/* Dodatni prostor među projektima */
+
 .about-projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px; /* Povećajmo rastojanje između projekata */
+    gap: 30px; 
 }
 .project {
     background-color: #f9f9f9;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px; /* Dodajmo rastojanje ispod svakog projekta */
+    margin-bottom: 30px;
 
 
 }
@@ -190,30 +189,19 @@ body{
     width: 100%;
     border-radius: 8px;
     margin-bottom: 15px;
-    transition: transform 0.3s ease; /* Dodajemo tranziciju za glatko prelazak */
+    transition: transform 0.3s ease;
 }
-
 .project img:hover {
-    transform: scale(1.05); /* Uvećava sliku prilikom prelaska mišem */
+    transform: scale(1.05); 
 }
-
 .project h2 a {
     color: #333;
     text-decoration: none;
-    transition: color 0.3s ease; /* Dodajemo tranziciju boje za glatko prelazak */
+    transition: color 0.3s ease; 
 }
 
 .project h2 a:hover {
-    color: #ff6f61; /* Boja se menja prilikom prelaska mišem preko linka */
-}
-h2 {
-    font-size: 1.5em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-h2:hover {
-    color: #ff6f61; /* Boja se menja prilikom prelaska mišem preko naslova */
+    color: #ff6f61;
 }
 h1 {
     font-size: 2.5em;
@@ -221,23 +209,62 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
 }
-/* Adjustments for larger screens */
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.content-item {
+    padding: 1rem;
+    margin: 10px;
+}
+.responsive-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+.responsive-img:hover {
+    transform: scale(1.05) rotate(5deg); 
+    filter: brightness(1.2) contrast(1.2); 
+}
+.about-para {
+    margin-top: 2rem;
+}
+.index {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.about-btns {
+    display: flex;
+    justify-content: center;
+}
 @media screen and (min-width: 992px){
     .about-wrapper{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
     .about-left{
-        flex: 1; /* Let it grow to occupy remaining space */
-        overflow-y: auto; /* Enable scrolling */
+        flex: 1; 
+        overflow-y: auto; 
     }
     .about-right{
-        position: fixed; /* Fix the position */
-        top: 0; /* Position at the top */
-        right: 0; /* Position at the right */
-        bottom: 0; /* Occupy full height */
-        width: 50%; /* Occupy half width */
-        overflow-y: auto; /* Enable scrolling */
+        position: fixed;
+        top: 0; 
+        right: 0; 
+        bottom: 0; 
+        width: 50%; 
+        overflow-y: auto; 
     }
 }
 @media screen and (max-width: 768px) {
@@ -253,5 +280,24 @@ h1 {
 
     .about-left {
         margin-bottom: 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+
+    .about-right h1{
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    .about-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .responsive-img {
+        width: 150px;
+        height: 150px;
+    }
+    .about-btns {
+        display: grid;
+        gap: 20px;
     }
 }
